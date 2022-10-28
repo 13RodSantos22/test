@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beijocas</title>
+    <style>
+        * {
+            background: pink;
+            color: white;
+            text-align: center;
+            font-family: Helvetica;
+        }
+
+        button {
+            background: red;
+            width: 100px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>Quer ficar comigo?</h1>
+    <div class="heart">
+        <!-- <img src="heart.png"> -->
+    </div>
+    <button onclick="aceitou()">SIM</button>
+    <button id="element" onclick="recusou()">NÃO</button>
+
+    <script>
+        var element = document.getElementById('element');
+        var position = element.getBoundingClientRect();
+        var nRandom = 0
+        function generateRandomInteger(max) {
+            nRandom = Math.floor(Math.random() * max) + 1;
+        }
+
+        function recusou () {
+            element.style.position = "absolute"
+            generateRandomInteger(window.innerWidth - 100)
+            element.style.left = nRandom + "px"
+            generateRandomInteger(window.innerHeight - 100)
+            element.style.top = nRandom + "px"
+            position.top = 10
+        }
+
+        function aceitou () {
+            alert("Parabéns! Agora vamos ficar!!! :) ")
+        }
+    </script>
+</body>
+</html>
